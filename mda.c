@@ -21,7 +21,7 @@ int main()
         }
        printf("\n");
     }
-     printf("your addtion of culem is \n");
+     printf("your addtion of digunal is \n");
       sum=0;
      for(j=0;j<2;j++) 
     {
@@ -31,9 +31,10 @@ int main()
             if(i==j)
             {
              sum=sum+M[i][j];
+                 printf("sum=%d\t\n",sum);
             }
         }
-         printf("sum=%d\t\n",sum);
+         
     }
     return 0;
 
