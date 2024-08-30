@@ -1,29 +1,9 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main()
-{
-    FILE *file;
-    int *a,p = 0,t1 = 0,c = 0,v = 0,k = 0,t = 0;
-     file = fopen("anatherfile.txt","r");
-      if(file == NULL)
-    {
-        printf("\n anatherfile.txt file is not present \n ");
-    }
-    while (fscanf(file,"%d",&v) != EOF)
-    {
-        c++;  
-    }
-    a = (int *)malloc(c * sizeof(int));
-     rewind(file);
-      while (fscanf(file,"%d",&v) != EOF)
-    {
-        a[k] = v;
-        k++; 
-        printf("%d\t",v);
-    }
-     fclose(file);
-      
-     for(int i = 0;i < c-1;i++)
+ void selection_sort(int *a,int c)  ///// creat a function
+ {
+    int p = 0,t = 0;
+  for(int i = 0;i < c-1;i++)        ////selection sort sorting
         {
             p= i;  
             for(int j=i+1;j<c;j++)
@@ -33,18 +13,43 @@ int main()
                     p= j; 
                 }
             }
-             if(p != i)
+            if(p!= i)                   /////swaping
             {
-                
-                t = a[p];
+                 t = a[p];
                 a[p] = a[i];
                 a[i] = t;
+            
             }
-        }
-    printf("\nsorted elements are : \n");
-    for(int i = 0;i < c;i++)
+        }}
+int main()
+{
+
+    FILE *file;
+    int *a,c = 0,v= 0,k = 0;        
+     file = fopen("anatherfile.txt","r");    ////file open
+      if(file == NULL)   /// file is nul
+    {
+        printf("\n anatherfile.txt file is not present \n ");
+    }
+    while (fscanf(file,"%d",&v) != EOF)    ////element of file
+    {
+        c++;  
+    }
+    a = (int *)malloc(c * sizeof(int));     //// memory allocation syntaqx
+     rewind(file);
+      while (fscanf(file,"%d",&v) != EOF)     //// element stor in memory up to last no
+    {
+        a[k] = v; 
+        k++; 
+        printf("%d\t",v);
+    }
+     
+      
+    selection_sort(a,c);   //// call function
+    printf("\nsorted elements are : \n"); //// print
+    for(int i = 0;i < c;i++)             
     
         printf("%d\n",a[i]);
-    
+      
      return 0;
    }
