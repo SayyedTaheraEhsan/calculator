@@ -2,19 +2,25 @@
 
 int main()
 {
-    int x, y;
-    printf("Enter values of a and b for complex number ( a + bi ): ");
-    scanf("%d %d",&x,&y);
-    if(y>=0)
+    int x,i;
+    double avg, sum=0;
+    printf("Enter 10 integers: ");
+    for(i=0;i<10;i++)
     {
-        printf("Complex number is : %d + %di\n", x,y);
+        scanf("%d",&x);
+        sum+=x;
+        printf("Sum = %.2lf\n",sum);
     }
+
+    avg = sum/10;
+    printf("Original Average is: %.2lf\n",avg);
+
+    if(avg>50)
+        printf("Final Average is : %.2lf\n",avg/2);
     else
-    {
-        y=y*(-1);
-        printf("Complex number is : %d - %di\n", x,y);
-    }
+        printf("Final Average is : %.2lf\n",avg);
     return 0;
     
 }
+	
 	
