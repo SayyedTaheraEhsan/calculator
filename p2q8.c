@@ -41,9 +41,9 @@ int main() {
     // Read the matrix elements
     printf("Enter the elements of the matrix (0 or 1):\n");
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < n; j++) 
             scanf("%d", &matrix[i][j]);
-        }
+        
     }
 
     // Process the matrix
