@@ -1,57 +1,60 @@
-#include <stdio.h>
+#include<stdio.h>
+int main()
+{
+    int image[3][3] = {{1,1,0},{0,1,1},{0,0,1}};
+    int flipimage[3][3];
+    int temp;
 
-// Function to flip and invert the image
-void flip_and_invert_image(int matrix[][100], int n) {
-    // Flip the image horizontally
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n / 2; j++) {
-            int temp = matrix[i][j];
-            matrix[i][j] = matrix[i][n - j - 1];
-            matrix[i][n - j - 1] = temp;
-        }
-    }
-    
-    // Invert the image
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            matrix[i][j] = 1 - matrix[i][j];
-        }
-    }
-}
-
-// Function to print the matrix
-void print_matrix(int matrix[][100], int n) {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
-            printf("%d ", matrix[i][j]);
+    printf("Original Matrix\n");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d\t",image[i][j]);
         }
         printf("\n");
-    }
-}
-
-int main() {
-    int n;
-
-    // Read the size of the matrix
-    printf("Enter the size of the matrix (n): ");
-    scanf("%d", &n);
-
-    int matrix[100][100];  // Assuming maximum size is 100x100
-
-    // Read the matrix elements
-    printf("Enter the elements of the matrix (0 or 1):\n");
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) 
-            scanf("%d", &matrix[i][j]);
         
     }
 
-    // Process the matrix
-    flip_and_invert_image(matrix, n);
+    for (int i = 0; i < 3; ++i)
+    {
+       for (int j = 2,k=0; k<3,j >= 0; --j,++k)
+       {
+            flipimage[i][k] = image[i][j];
+       }
+       
+    }
 
-    // Print the resulting matrix
-    printf("Resulting matrix after flip and invert:\n");
-    print_matrix(matrix, n);
+    printf("Flipped Matrix\n");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d\t",flipimage[i][j]);
+        }
+        printf("\n");
+    }
+    
+    for (int i = 0; i < 3; ++i)
+    {
+        for (int j = 0; j < 3; ++j)
+        {
+            if(flipimage[i][j] == 1)
+                flipimage[i][j] = 0;
+            else
+                flipimage[i][j] = 1;    
+        }
+        
+    }
 
-    return 0;
+    printf("Inverted  Matrix\n");
+    for (int i = 0; i < 3; i++)
+    {
+        for (int j = 0; j < 3; j++)
+        {
+            printf("%d\t",flipimage[i][j]);
+        }
+        printf("\n");
+    }
+    
 }
