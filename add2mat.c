@@ -41,10 +41,10 @@ int main()
      for(i1=0;i1<a;i1++)
     {
         for(j1=0;j1<a1;j1++)
-        {
+        
             printf("%d",M1[j1][i1]);
             
-        }
+    
         printf("\n");
     }
     sum=M1[i1][j1]+M[1][2];

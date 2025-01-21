@@ -31,9 +31,10 @@ int main()
             if(i<j)
             {
              sum=sum+M[i][j];
+             printf("sum=%d\t\n",sum);
             }
         }
-         printf("sum=%d\t\n",sum);
+        
     }
     return 0;
 

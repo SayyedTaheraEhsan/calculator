@@ -1,63 +1,68 @@
-#include <stdio.h>
-#include <stdbool.h>
-bool plot_flowers(int flowerbed[],int n, int new_f)
-{
-    
-    for (int i = 0; i < n; ++i)
-    {
-        bool left = false;
-        bool right = false;
-        if (flowerbed[i] == 0)
-        {
-            if (i == 0 || flowerbed[i - 1] == 0){
-                left = true;
-            }
-            if (i == n - 1 || flowerbed[i + 1] == 0){
-                right = true;
-            }
-            if (left && right)
-            {
-                flowerbed[i] = 1;
-                new_f--;
-            }
-        }
-    }
-    return new_f;
-}
+#include<stdio.h>
+
 int main()
 {
-    int n, new_f;
-    printf("Enter the size of flowerbed: ");
-    scanf("%d", &n);
+    int n,i,j,k,temp;
 
-    int flowerbed[n];
+    printf("Enter number of rows and columns for Square Matrix : ");
+    scanf("%d",&n);
 
-    for (int i = 0; i < n; ++i)
+    int M[n][n];
+    printf("Enter elements for Matrix : ");
+    while(i=0&&i<n)
     {
-        printf("Flower : 1 \t No Flower : 0 ");
-        scanf("%d", &flowerbed[i]);
+        while(j=0&&j<n)
+        {
+            printf("M[%d][%d] : ",i+1,j+1);
+            scanf("%d",&M[i][j]);
+            j++;
+        }
+        i++;
     }
-
-    printf("Enter number of new flowers to be plotted: ");
-    scanf("%d", &new_f);
-
-    printf("\n");
-    for (int i = 0; i < n; ++i)
+    printf("Original Matrix : \n");
+    while(i=0&&i<n)
     {
-        printf("%d\t", flowerbed[i]);
-    }
-     printf("\n");
-
-    bool plotted = plot_flowers(flowerbed, n, new_f);
-    if (plotted){
-        printf("%d\n",plotted);
-    }
-    else{
-         printf("%d\n",plotted);
+        printf("[");
+        while(j=0&&j<n)
+        {
+            printf(" %d ",M[i][j]);
+            j++;
+        }
+        printf("]\n");
+        i++;
     }
 
-    for (int i = 0; i < n; ++i)
-    {
-        printf("%d\t", flowerbed[i]);
+    printf("Horizontally Flipped and Inverted Matrix : \n");
+
+  while(i=0&&i<n)
+  {
+        while(j=n-1,k=0 && j>=0,k<n)
+        {
+            
+            temp=M[i][j];
+            M[i][j]=M[i][k];
+            M[i][k] = temp;
+            if(M[i][j]){
+                M[i][j]=0;
+            }
+            else{
+                M[i][j]=1;
+            }
+            j--,k++;
+        }
+        i++;
     }
+   while(i=0&&i<n)
+   {
+        printf("[");
+        while(j=0&&j<n)
+        {
+            printf(" %d ",M[i][j]);
+            j++;
+        }
+        printf("]\n");
+        i++;
+    }
+
+    return 0;
 }

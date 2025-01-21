@@ -1,3 +1,4 @@
+
 #include<stdio.h>
 #include<stdlib.h>
  void selection_sort(int *a,int c)  ///// creat a function

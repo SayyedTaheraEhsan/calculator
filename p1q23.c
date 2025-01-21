@@ -1,15 +1,14 @@
 #include <stdio.h>
-#include <math.h>
+
 int main()
 {
-    long double x,result;
-    printf("Enter value of x: ");
-    scanf("%Lf",&x);
+    long int base, exponent, power=1,i;
+    printf("Enter base and exponent: ");
+    scanf("%ld %ld",&base, &exponent);
 
-    result =  sqrt((7*x*x)+x);
-    result = result / 2;
-    result += 10;
-    printf("f(%.4Lf) = %.4Lf\n",x,result);
+    for(i=0;i<exponent;i++)
+        power *=base;
+
+    printf(" %ld^%ld = %ld\n",base, exponent, power);
     return 0;
 }
-	

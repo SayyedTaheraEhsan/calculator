@@ -1,8 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,j,n,m,x,y,l,k,
-    temp;
+    int i,j,n,m,x,y,k;
     int A[100][100];
     int B[100][100];
     int C[100][100];

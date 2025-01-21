@@ -1,17 +1,18 @@
 #include<stdio.h>
-int main()
-{ 
-  int A[1000],sum=0,mult=1,i;
-  printf("enter the 5 elements of matrix\n");
-  for(i=0;i<5;i++)
-  {
-    scanf("%d",&A[i]);
-    
-    sum+=A[i];
-    mult*=A[i];
-  }
-  printf("%d\n",sum);
-   printf("%d\n",mult);
 
-  return 0;
+int main()
+{
+    int n=5,i;
+    double arr[n],sum=0,product=1;
+
+    printf("Enter five decimal numbers: ");
+    for(i=0;i<n;i++){
+        scanf("%lf",&arr[i]);
+        sum+=arr[i];
+        product*=arr[i];
+    }
+    printf("a) Sum: %.4lf\n",sum);
+    printf("b) Product: %.4lf\n",product);
+
+    return 0;
 }

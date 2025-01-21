@@ -21,8 +21,6 @@ int main()
         k++; 
     }
      fclose(file);
-
-    
      for(int i = 0;i < c-1;i++)
         {
             p= i;  
@@ -41,13 +39,10 @@ int main()
                 a[i] = t;
             }
         }
-          
-        printf("Wrong input \n");  
-    printf("Elements are : \n");
+    printf("sorted elements are : \n");
     for(int i = 0;i < c;i++)
-    {
+    
         printf("%d\n",a[i]);
-    }
-     free(a);
+    
      return 0;
    }
